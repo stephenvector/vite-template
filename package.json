@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "dev": "vite --port 3000",
+    "build": "vite build",
+    "test": "vitest --reporter verbose",
+    "test:ci": "vitest --reporter verbose run",
+    "coverage": "vitest run --reporter verbose --coverage"
+  },
+  "devDependencies": {
+    "@vitest/coverage-c8": "^0.22.1",
+    "typescript": "^4.8.2",
+    "vite": "^3.0.9",
+    "vitest": "^0.22.1"
+  }
+}
