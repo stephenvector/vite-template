@@ -2,11 +2,10 @@ name: "Main"
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
-  install:
+  main:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -15,33 +14,8 @@ jobs:
           node-version: latest
           cache: npm
       - run: npm ci
-
-  prettier:
-    needs: install
-    runs-on: ubuntu-latest
-    steps:
       - run: npm run prettier
-
-  typecheck:
-    needs: install
-    runs-on: ubuntu-latest
-    steps:
       - run: npm run typecheck
-
-  lint:
-    needs: install
-    runs-on: ubuntu-latest
-    steps:
       - run: npm run lint
-
-  test:
-    needs: install
-    runs-on: ubuntu-latest
-    steps:
       - run: npm run test
-
-  build:
-    needs: install
-    runs-on: ubuntu-latest
-    steps:
       - run: npm run build
